@@ -4,7 +4,7 @@ const replace = require('gulp-replace');
 // HTML
 const fileInclude = require('gulp-file-include');
 const htmlclean = require('gulp-htmlclean');
-const webpHTML = require('gulp-webp-retina-html');
+// const webpHTML = require('gulp-webp-retina-html');
 const typograf = require('gulp-typograf');
 
 // SASS
@@ -92,15 +92,15 @@ gulp.task('html:docs', function () {
 					],
 				})
 			)
-			.pipe(
-				webpHTML({
-					extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
-					retina: {
-						1: '',
-						2: '@2x',
-					},
-				})
-			)
+			// .pipe(
+			// 	webpHTML({
+			// 		extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+			// 		retina: {
+			// 			1: '',
+			// 			2: '@2x',
+			// 		},
+			// 	})
+			// )
 			.pipe(htmlclean())
 			.pipe(gulp.dest('./docs/'))
 	);

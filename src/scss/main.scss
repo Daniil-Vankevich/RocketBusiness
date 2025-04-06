@@ -14,6 +14,7 @@
 
 
 .main {
+	overflow-x: hidden;
 
 	.color-white {
 		background-color: #fff;
@@ -365,13 +366,13 @@
 						}
 					}
 
-					@media (max-width: 400px) {
+					@media (max-width: 412px) {
 
 						.offer__call-btn {
 							padding: 6px 12px 6px 12px;
 							position: absolute;
 							bottom: 4%;
-							right: 3%;
+							right: 4%;
 	
 							.offer__call-btn-descr {
 								font-size: 11px;
@@ -519,65 +520,43 @@
 							font-weight: 700;
 							line-height: 20px; /* 100% */
 						}
-					}
 
-					@media (max-width: 400px) {
+						
+					}
+	
+					@media (max-width: 412px) {
 
 						.offer__horiz1-call-btn {
 							padding: 6px 12px 6px 12px;
 							position: absolute;
 							bottom: 9%;
 							right: 3%;
-	
+
 							.offer__horiz1-call-btn-descr {
 								font-size: 11px;
 							}
 						}
 					}
 
-
-					.offer__horiz1-call-btn:hover {
-						background-color: #FF5BC6;
-						box-shadow: 1px 5px 5px 1px gray;
-					}
-
-					// @media (max-width: 1130px) {
-
-					// 	.offer__horiz1-price{
-					// 		color: #ffffff;
-					// 		text-align: center;
-					// 		font-family: Inter;
-					// 		font-size: 16px;
-					// 		font-style: normal;
-					// 		font-weight: 500;
-					// 		line-height: 20px; /* 100% */
-					// 		position: absolute;;
-					// 		bottom: 13%;
-					// 		left: 43%;
-					// 	}
+					// @media (max-width: 400px) {
 
 					// 	.offer__horiz1-call-btn {
-					// 		background-color: #18C576;
-					// 		padding: 3px 9px 3px 9px;
-					// 		border-radius: 5px;
-					// 		min-width:0;
-					// 		flex-shrink: 1;
+					// 		padding: 6px 8px 6px 8px;
 					// 		position: absolute;
 					// 		bottom: 9%;
 					// 		right: 3%;
 	
 					// 		.offer__horiz1-call-btn-descr {
-					// 			color: #ffffff;
-					// 			text-align: center;
-					// 			font-family: Inter;
 					// 			font-size: 11px;
-					// 			font-style: normal;
-					// 			font-weight: 500;
-					// 			line-height: 20px; /* 100% */
 					// 		}
 					// 	}
 					// }
 
+
+					.offer__horiz1-call-btn:hover {
+						background-color: #FF5BC6;
+						box-shadow: 1px 5px 5px 1px gray;
+					}
 
 					}
 				}
@@ -682,7 +661,7 @@
 						}
 					}
 
-					@media (max-width: 400px) {
+					@media (max-width: 412px) {
 
 						.offer__horiz2-call-btn {
 							padding: 6px 12px 6px 12px;
@@ -733,7 +712,7 @@
 
 			}
 
-			@media (max-width: 400px) { 
+			@media (max-width: 412px) { 
 
 				.offer__slider-container {
 					position: relative;
@@ -741,6 +720,7 @@
 					display: block;
 					max-width: 50px;
 					left: 8%;
+					overflow-x: hidden;
 
 					.offer__slider {
 						display: flex;
@@ -1091,6 +1071,13 @@
 						}
 					}
 
+					@media (max-width: 400px) {
+
+						.offer__vertical2-call-btn {
+							left: 5.5%;
+						}
+					}
+
 					@media (((min-width: 1025px) and (max-width: 1160px))) {
 	
 
@@ -1322,7 +1309,7 @@
 		}
 	}
 
-	@media (max-width: 400px) {
+	@media (max-width: 412px) {
 		.color-gray {
 			// margin-top: 100px;
 		}
@@ -1370,6 +1357,7 @@
 					position: relative;
 					left: 32%;
 					margin-top: 20px;
+					overflow-x: hidden;
 
 					.offer__vertical1 {
 						height: 285px;
@@ -1579,7 +1567,7 @@ bottom: 25%;
 	.popup {
 		position: absolute;
 		top: 50%;
-		left: 36.5%;
+		left: 51%;
 		transform: translate(-50%, -50%) scale(0); // Центрируем и масштабируем в 0 само окно
 		background: #fff;
 		width: 328px;
