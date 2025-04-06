@@ -1,0 +1,29 @@
+<div class="popup__bg">
+	<form class="popup" name="myForm">
+		<img src="./img/xform.svg" class="close-popup" />
+		<h1>Оставьте заявку</h1>
+		<div class="label__text">
+			<label class="popup__name">
+				<input class="from" type="text" name="fname" placeholder="Ваше имя*" id="NameInput" minlength="2" maxlength="12" pattern="[a-zA-Zа-яА-Я]+" required />
+			</label>
+		</div>
+		<label>
+			<div class="label__text-error">
+				Поле не&#160;заполнено
+			</div>
+		</label>
+		<label class="popup__phone">
+			<input class="maskPhone" type="tel" name="tel" data-phone-pattern placeholder="Номер телефона*" id="NamePhone" required />
+			<div class="label__text"></div>
+		</label>
+		<div class="checkbox__block">
+			<label>
+				<input class="checkbox-style" type="checkbox" name="agree" required />
+				<div class="label__text-checkbox">
+					Я&#160;соглашаюсь на&#160;обработку персональных данных
+				</div>
+			</label>
+		</div>
+		<button type="submit" value="Submit" class="validateBtn">Отправить</button>
+	</form>
+</div>
