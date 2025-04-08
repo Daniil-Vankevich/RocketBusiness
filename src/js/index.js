@@ -48,47 +48,84 @@ function initializeVideoModule(videoModule){
 
 // Получаем элементы слайдера
 const slider = document.querySelector('.offer__vertical');
+const slideCount = document.querySelectorAll('.offer__vertical-slider-container').length;
+let currentIndex = 0; // Переменная для хранения текущего слайда
 const prevButton = document.querySelector('.first__btn');
 const nextButton = document.querySelector('.second__btn');
-const slides = Array.from(slider.querySelectorAll('.offer__vertical-slider'));
-const slideCount = slides.length;
-let slideIndex = 0;
+
+ // Функция смены слайдов
+function goToSlide(index) {
+  if (index > 0) {
+      index = slideCount + 1; // Если нажали «вперед» на первом слайде, переходим на следующий
+  } else if (index <= slideCount) {
+      index = 0; // Если нажали «назад» на последнем слайде, переходим на предыдущий
+  }
+
+  currentIndex = index; // Запоминаем текущий слайд
+  slider.style.transform = `translateX(${-index * (65)}%)`; // Сдвигаем контейнер со слайдами
+}
+
+
+ // Добавляем обработчик клика для кнопки «Назад»
+prevButton.addEventListener('click', () => {
+  goToSlide(currentIndex - 1);
+  nextButton.style.backgroundColor = 'gray';
+  prevButton.style.backgroundColor = 'black';
+});
+
+// Добавляем обработчик клика для кнопки «Вперёд»
+nextButton.addEventListener('click', () => {
+  goToSlide(currentIndex + 1);
+  nextButton.style.backgroundColor = 'black';
+  prevButton.style.backgroundColor = 'gray';
+});
+
+// Устанавливаем первый активный слайд при загрузке страницы
+goToSlide(0);
+
+
+// const prevButton = document.querySelector('.first__btn');
+// const elem1Btn = document.querySelector('.offer__vertical-slider')
+// const nextButton = document.querySelector('.second__btn');
+// const slides = Array.from(slider.querySelectorAll('.offer__vertical-slider'));
+// const slideCount = slides.length;
+// let slideIndex = 0;
 
 // Устанавливаем обработчики событий для кнопок
-prevButton.addEventListener('click', showPreviousSlide);
-nextButton.addEventListener('click', showNextSlide);
+// prevButton.addEventListener('click', showPreviousSlide);
+// nextButton.addEventListener('click', showNextSlide);
 
 // Функция для показа предыдущего слайда
-function showPreviousSlide() {
-  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-  updateSlider();
-}
+// function showPreviousSlide() {
+//   slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+//   updateSlider();
+// }
 
 // Функция для показа следующего слайда
-function showNextSlide() {
-  slideIndex = (slideIndex + 1) % slideCount;
-  updateSlider();
-}
+// function showNextSlide() {
+//   slideIndex = (slideIndex + 1) % slideCount;
+//   updateSlider();
+// }
 
 // Функция для обновления отображения слайдера
 
-function updateSlider() {
+// function updateSlider() {
 
     
-    slides.forEach((slide, index) => {
-      if (index === slideIndex) {
-        slide.style.transform = `translateX(${-index * 117}%)`;
-        // slide.style.display = 'block';
-      } 
-      else {
-        slide.style.transform = `translateX(${-index}%)`;
-        // slide.style.display = 'none';
-      }
-    });
-}
+//     slides.forEach((slide, index) => {
+//       if (index === slideIndex) {
+//         slide.style.transform = `translateX(${-index * 117}%)`;
+//         // slide.style.display = 'block';
+//       } 
+//       else {
+//         slide.style.transform = `translateX(${-index}%)`;
+//         // slide.style.display = 'none';
+//       }
+//     });
+// }
 
 // Инициализация слайдера
-updateSlider();
+// updateSlider();
 
 
 
